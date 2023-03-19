@@ -74,6 +74,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "_svm_cython_blas_helpers.h"
 #include "../newrand/newrand.h"
 
+#include <ctime>
+#include <fstream>
 
 #ifndef _LIBSVM_CPP
 typedef float Qfloat;
@@ -700,9 +702,11 @@ void Solver::Solve(int l, const QMatrix& Q, const double *p_, const schar *y_,
 			G[i] = p[i];
 			G_bar[i] = 0;
 		}
+		std::ofstream file_grd("Log/grd.txt");
 		for(i=0;i<l;i++)
 			if(!is_lower_bound(i))
 			{
+    			file_grd << i << "-" << std::time(0) <<"\n";
 				const Qfloat *Q_i = Q.get_Q(i,l);
 				double alpha_i = alpha[i];
 				int j;
@@ -712,13 +716,16 @@ void Solver::Solve(int l, const QMatrix& Q, const double *p_, const schar *y_,
 					for(j=0;j<l;j++)
 						G_bar[j] += get_C(i) * Q_i[j];
 			}
+    	file_grd.close();
 	}
 
 	// optimization step
 
 	int iter = 0;
 	int counter = min(l,1000)+1;
-
+    
+    std::ofstream file_while("Log/while_loop.txt");
+    
 	while(1)
 	{
                 // set max_iter to -1 to disable the mechanism
@@ -752,7 +759,7 @@ void Solver::Solve(int l, const QMatrix& Q, const double *p_, const schar *y_,
 		}
 
 		++iter;
-
+        file_while << iter << "-" <<std::time(0) <<"\n";
 		// update alpha[i] and alpha[j], handle bounds carefully
 
 		const Qfloat *Q_i = Q.get_Q(i,active_size);
@@ -892,7 +899,7 @@ void Solver::Solve(int l, const QMatrix& Q, const double *p_, const schar *y_,
 			}
 		}
 	}
-
+    file_while.close();
 	// calculate rho
 
 	si->rho = calculate_rho();
