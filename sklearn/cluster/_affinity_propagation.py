@@ -84,8 +84,9 @@ def _affinity_propagation(
     e = np.zeros((n_samples, convergence_iter))
 
     ind = np.arange(n_samples)
-
+    print("Iteration: ")
     for it in range(max_iter):
+        print(it, end=', ')
         # tmp = A + S; compute responsibilities
         np.add(A, S, tmp)
         I = np.argmax(tmp, axis=1)
@@ -167,7 +168,7 @@ def _affinity_propagation(
         )
         labels = np.array([-1] * n_samples)
         cluster_centers_indices = []
-
+    print()
     if return_n_iter:
         return cluster_centers_indices, labels, it + 1
     else:
