@@ -360,6 +360,21 @@ def spectral_clustering(
 
     return clusterer.labels_
 
+import sys
+import inspect
+
+def get_function_memory_usage(func):
+    """
+    Prints the memory consumption of each variable in a function.
+    """
+    total = 0
+    local_variables = inspect.currentframe().f_back.f_locals
+    for var_name, var_value in local_variables.items():
+        var_memory = sys.getsizeof(var_value)
+        print(f"{var_name}: {var_memory} bytes")
+        total+=var_memory
+    print("Total: ", total/ (1024 ** 3), " GB")
+    
 
 class SpectralClustering(ClusterMixin, BaseEstimator):
     """Apply clustering to a projection of the normalized Laplacian.
@@ -679,6 +694,9 @@ class SpectralClustering(ClusterMixin, BaseEstimator):
             dtype=np.float64,
             ensure_min_samples=2,
         )
+        print("X")
+        get_function_memory_usage(SpectralClustering.fit)
+        print()
         allow_squared = self.affinity in [
             "precomputed",
             "precomputed_nearest_neighbors",
@@ -690,7 +708,7 @@ class SpectralClustering(ClusterMixin, BaseEstimator):
                 " a custom affinity matrix, "
                 "set ``affinity=precomputed``."
             )
-
+            
         if self.affinity == "nearest_neighbors":
             connectivity = kneighbors_graph(
                 X, n_neighbors=self.n_neighbors, include_self=True, n_jobs=self.n_jobs
@@ -715,11 +733,14 @@ class SpectralClustering(ClusterMixin, BaseEstimator):
             self.affinity_matrix_ = pairwise_kernels(
                 X, metric=self.affinity, filter_params=True, **params
             )
-
+        print("affinity")
+        get_function_memory_usage(SpectralClustering.fit)
+        print()
         random_state = check_random_state(self.random_state)
         n_components = (
             self.n_clusters if self.n_components is None else self.n_components
         )
+        
         # We now obtain the real valued solution matrix to the
         # relaxed Ncut problem, solving the eigenvalue problem
         # L_sym x = lambda x  and recovering u = D^-1/2 x.
@@ -734,6 +755,9 @@ class SpectralClustering(ClusterMixin, BaseEstimator):
             eigen_tol=self.eigen_tol,
             drop_first=False,
         )
+        print("spectral_embedding")
+        get_function_memory_usage(SpectralClustering.fit)
+        print()
         if self.verbose:
             print(f"Computing label assignment using {self.assign_labels}")
 
@@ -749,7 +773,9 @@ class SpectralClustering(ClusterMixin, BaseEstimator):
             self.labels_ = cluster_qr(maps)
         else:
             self.labels_ = discretize(maps, random_state=random_state)
-
+        print("assign_labels")
+        get_function_memory_usage(SpectralClustering.fit)
+        print()
         return self
 
     def fit_predict(self, X, y=None):

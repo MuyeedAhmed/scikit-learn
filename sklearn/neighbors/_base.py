@@ -494,6 +494,7 @@ class NeighborsBase(MultiOutputMixin, BaseEstimator, metaclass=ABCMeta):
                 X = self._validate_data(X, accept_sparse="csr", order="C")
 
         self._check_algorithm_metric()
+        
         if self.metric_params is None:
             self.effective_metric_params_ = {}
         else:
@@ -519,7 +520,7 @@ class NeighborsBase(MultiOutputMixin, BaseEstimator, metaclass=ABCMeta):
                 # Use the generic minkowski metric, possibly weighted.
                 self.effective_metric_params_["p"] = p
                 self.effective_metric_params_["w"] = w
-
+        
         if isinstance(X, NeighborsBase):
             self._fit_X = X._fit_X
             self._tree = X._tree
@@ -554,7 +555,6 @@ class NeighborsBase(MultiOutputMixin, BaseEstimator, metaclass=ABCMeta):
         n_samples = X.shape[0]
         if n_samples == 0:
             raise ValueError("n_samples must be greater than 0")
-
         if issparse(X):
             if self.algorithm not in ("auto", "brute"):
                 warnings.warn("cannot use tree with sparse input: using brute force")
@@ -592,6 +592,7 @@ class NeighborsBase(MultiOutputMixin, BaseEstimator, metaclass=ABCMeta):
             ):
                 self._fit_method = "brute"
             else:
+                
                 if (
                     # TODO(1.3): remove "wminkowski"
                     self.effective_metric_ in ("wminkowski", "minkowski")
@@ -621,7 +622,6 @@ class NeighborsBase(MultiOutputMixin, BaseEstimator, metaclass=ABCMeta):
                     self._fit_method = "ball_tree"
                 else:
                     self._fit_method = "brute"
-
         if (
             # TODO(1.3): remove "wminkowski"
             self.effective_metric_ in ("wminkowski", "minkowski")
@@ -1152,14 +1152,12 @@ class RadiusNeighborsMixin:
 
         if radius is None:
             radius = self.radius
-
         use_pairwise_distances_reductions = (
             self._fit_method == "brute"
             and RadiusNeighbors.is_usable_for(
                 X if X is not None else self._fit_X, self._fit_X, self.effective_metric_
             )
         )
-
         if use_pairwise_distances_reductions:
             results = RadiusNeighbors.compute(
                 X=X,
@@ -1194,13 +1192,11 @@ class RadiusNeighborsMixin:
                 kwds = {"squared": True}
             else:
                 kwds = self.effective_metric_params_
-
             reduce_func = partial(
                 self._radius_neighbors_reduce_func,
                 radius=radius,
                 return_distance=return_distance,
             )
-
             chunked_results = pairwise_distances_chunked(
                 X,
                 self._fit_X,

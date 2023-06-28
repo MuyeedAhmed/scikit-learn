@@ -379,7 +379,6 @@ class DBSCAN(ClusterMixin, BaseEstimator):
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore", sparse.SparseEfficiencyWarning)
                 X.setdiag(X.diagonal())  # XXX: modifies X's internals in-place
-
         neighbors_model = NearestNeighbors(
             radius=self.eps,
             algorithm=self.algorithm,
@@ -392,24 +391,21 @@ class DBSCAN(ClusterMixin, BaseEstimator):
         neighbors_model.fit(X)
         # This has worst case O(n^2) memory complexity
         neighborhoods = neighbors_model.radius_neighbors(X, return_distance=False)
-
         if sample_weight is None:
             n_neighbors = np.array([len(neighbors) for neighbors in neighborhoods])
         else:
             n_neighbors = np.array(
                 [np.sum(sample_weight[neighbors]) for neighbors in neighborhoods]
             )
-
         # Initially, all samples are noise.
         labels = np.full(X.shape[0], -1, dtype=np.intp)
-
+        
         # A list of all core samples found.
         core_samples = np.asarray(n_neighbors >= self.min_samples, dtype=np.uint8)
         dbscan_inner(core_samples, neighborhoods, labels)
 
         self.core_sample_indices_ = np.where(core_samples)[0]
         self.labels_ = labels
-
         if len(self.core_sample_indices_):
             # fix for scipy sparse indexing issue
             self.components_ = X[self.core_sample_indices_].copy()

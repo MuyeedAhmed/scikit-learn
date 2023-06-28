@@ -34,6 +34,21 @@ def _equal_similarities_and_preferences(S, preference):
     return all_equal_preferences() and all_equal_similarities()
 
 
+import sys
+import inspect
+
+def get_function_memory_usage(func):
+    """
+    Prints the memory consumption of each variable in a function.
+    """
+    total = 0
+    local_variables = inspect.currentframe().f_back.f_locals
+    for var_name, var_value in local_variables.items():
+        var_memory = sys.getsizeof(var_value)
+        # print(f"{var_name}: {var_memory} bytes")
+        total+=var_memory
+    print("Total: ", total/ (1024 ** 3), " GB")
+    
 def _affinity_propagation(
     S,
     *,
@@ -45,6 +60,9 @@ def _affinity_propagation(
     return_n_iter,
     random_state,
 ):
+    print("Called")
+    get_function_memory_usage(_affinity_propagation)
+    print()
     """Main affinity propagation algorithm."""
     n_samples = S.shape[0]
     if n_samples == 1 or _equal_similarities_and_preferences(S, preference):
@@ -66,27 +84,46 @@ def _affinity_propagation(
                 if return_n_iter
                 else (np.array([0]), np.array([0] * n_samples))
             )
-
+    print("S.flat[:: (n_samples + 1)] = preference")
     # Place preference on the diagonal of S
     S.flat[:: (n_samples + 1)] = preference
-
+    get_function_memory_usage(_affinity_propagation)
+    print()
+    print("A = np.zeros((n_samples, n_samples))")
     A = np.zeros((n_samples, n_samples))
+    get_function_memory_usage(_affinity_propagation)
+    print()
+    print("R = np.zeros((n_samples, n_samples))")
     R = np.zeros((n_samples, n_samples))  # Initialize messages
+    get_function_memory_usage(_affinity_propagation)
+    print()
     # Intermediate results
+    print("tmp = np.zeros((n_samples, n_samples))")
     tmp = np.zeros((n_samples, n_samples))
-
+    get_function_memory_usage(_affinity_propagation)
+    print()
+    print("S += ")
     # Remove degeneracies
     S += (
         np.finfo(S.dtype).eps * S + np.finfo(S.dtype).tiny * 100
     ) * random_state.standard_normal(size=(n_samples, n_samples))
-
+    get_function_memory_usage(_affinity_propagation)
+    print()
+    print("e")
     # Execute parallel affinity propagation updates
     e = np.zeros((n_samples, convergence_iter))
-
+    get_function_memory_usage(_affinity_propagation)
+    print()
+    print("ind")
     ind = np.arange(n_samples)
-    print("Iteration: ")
+    get_function_memory_usage(_affinity_propagation)
+    print()
+    print("Iteration: ", max_iter)
+    get_function_memory_usage(_affinity_propagation)
+    print()
+    
     for it in range(max_iter):
-        print(it, end=', ')
+        print(it)
         # tmp = A + S; compute responsibilities
         np.add(A, S, tmp)
         I = np.argmax(tmp, axis=1)
@@ -122,7 +159,9 @@ def _affinity_propagation(
         E = (np.diag(A) + np.diag(R)) > 0
         e[:, it % convergence_iter] = E
         K = np.sum(E, axis=0)
-
+    
+        get_function_memory_usage(_affinity_propagation)
+        print()
         if it >= convergence_iter:
             se = np.sum(e, axis=1)
             unconverged = np.sum((se == convergence_iter) + (se == 0)) != n_samples
@@ -168,7 +207,7 @@ def _affinity_propagation(
         )
         labels = np.array([-1] * n_samples)
         cluster_centers_indices = []
-    print()
+    # print()
     if return_n_iter:
         return cluster_centers_indices, labels, it + 1
     else:
@@ -496,14 +535,17 @@ class AffinityPropagation(ClusterMixin, BaseEstimator):
         if self.affinity == "precomputed":
             self.affinity_matrix_ = X.copy() if self.copy else X
         else:  # self.affinity == "euclidean"
+            import time
+            print("Distance Calc Start ", time.time())
             self.affinity_matrix_ = -euclidean_distances(X, squared=True)
-
+            print("Distance Calc End ", time.time())
+            
         if self.affinity_matrix_.shape[0] != self.affinity_matrix_.shape[1]:
             raise ValueError(
                 "The matrix of similarities must be a square array. "
                 f"Got {self.affinity_matrix_.shape} instead."
             )
-
+        print("preference")
         if self.preference is None:
             preference = np.median(self.affinity_matrix_)
         else:
@@ -511,7 +553,7 @@ class AffinityPropagation(ClusterMixin, BaseEstimator):
         preference = np.array(preference, copy=False)
 
         random_state = check_random_state(self.random_state)
-
+        print("Call func")
         (
             self.cluster_centers_indices_,
             self.labels_,

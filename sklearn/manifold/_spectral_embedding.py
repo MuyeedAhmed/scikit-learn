@@ -140,7 +140,21 @@ def _set_diag(laplacian, value, norm_laplacian):
             laplacian = laplacian.tocsr()
     return laplacian
 
+import sys
+import inspect
 
+def get_function_memory_usage(func):
+    """
+    Prints the memory consumption of each variable in a function.
+    """
+    total = 0
+    local_variables = inspect.currentframe().f_back.f_locals
+    for var_name, var_value in local_variables.items():
+        var_memory = sys.getsizeof(var_value)
+        print(f"{var_name}: {var_memory} bytes")
+        total+=var_memory
+    print("Total: ", total/ (1024 ** 3), " GB")
+    
 def spectral_embedding(
     adjacency,
     *,
@@ -254,7 +268,11 @@ def spectral_embedding(
             raise ValueError(
                 "The eigen_solver was set to 'amg', but pyamg is not available."
             ) from e
-
+    
+    print("pyamg")
+    get_function_memory_usage(spectral_embedding)
+    print()
+    
     if eigen_solver is None:
         eigen_solver = "arpack"
     elif eigen_solver not in ("arpack", "lobpcg", "amg"):
@@ -262,7 +280,9 @@ def spectral_embedding(
             "Unknown value for eigen_solver: '%s'."
             "Should be 'amg', 'arpack', or 'lobpcg'" % eigen_solver
         )
-
+    print("eigen_solver: ", eigen_solver)
+    get_function_memory_usage(spectral_embedding)
+    print()
     random_state = check_random_state(random_state)
 
     n_nodes = adjacency.shape[0]
@@ -283,6 +303,9 @@ def spectral_embedding(
         or eigen_solver != "lobpcg"
         and (not sparse.isspmatrix(laplacian) or n_nodes < 5 * n_components)
     ):
+        print("eigen_solver")
+        get_function_memory_usage(spectral_embedding)
+        print()
         # lobpcg used with eigen_solver='amg' has bugs for low number of nodes
         # for details see the source code in scipy:
         # https://github.com/scipy/scipy/blob/v0.11.0/scipy/sparse/linalg/eigen
@@ -290,7 +313,9 @@ def spectral_embedding(
         # or matlab:
         # https://www.mathworks.com/matlabcentral/fileexchange/48-lobpcg-m
         laplacian = _set_diag(laplacian, 1, norm_laplacian)
-
+        print("laplacian")
+        get_function_memory_usage(spectral_embedding)
+        print()
         # Here we'll use shift-invert mode for fast eigenvalues
         # (see https://docs.scipy.org/doc/scipy/reference/tutorial/arpack.html
         #  for a short explanation of what this means)
@@ -305,19 +330,39 @@ def spectral_embedding(
         # near 1.0 and leads to much faster convergence: potentially an
         # orders-of-magnitude speedup over simply using keyword which='LA'
         # in standard mode.
+        import time
         try:
             # We are computing the opposite of the laplacian inplace so as
             # to spare a memory allocation of a possibly very large array
             tol = 0 if eigen_tol == "auto" else eigen_tol
             laplacian *= -1
+            print("laplacian *= -1")
+            get_function_memory_usage(spectral_embedding)
+            print()
+            time.sleep(5)
             v0 = _init_arpack_v0(laplacian.shape[0], random_state)
+            print("v0 = _init_arpack_v0")
+            get_function_memory_usage(spectral_embedding)
+            print()
+            time.sleep(5)
             _, diffusion_map = eigsh(
                 laplacian, k=n_components, sigma=1.0, which="LM", tol=tol, v0=v0
             )
+            print("diffusion_map")
+            get_function_memory_usage(spectral_embedding)
+            print()
+            time.sleep(5)
             embedding = diffusion_map.T[n_components::-1]
+            print("-T-")
+            get_function_memory_usage(spectral_embedding)
+            print()
+            time.sleep(5)
             if norm_laplacian:
                 # recover u = D^-1/2 x from the eigenvector output x
                 embedding = embedding / dd
+            print("embedding")
+            get_function_memory_usage(spectral_embedding)
+            print()
         except RuntimeError:
             # When submatrices are exactly singular, an LU decomposition
             # in arpack fails. We fallback to lobpcg
@@ -401,6 +446,9 @@ def spectral_embedding(
                 raise ValueError
 
     embedding = _deterministic_vector_sign_flip(embedding)
+    print("embedding 2")
+    get_function_memory_usage(spectral_embedding)
+    print()
     if drop_first:
         return embedding[1:n_components].T
     else:
