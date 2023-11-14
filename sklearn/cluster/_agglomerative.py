@@ -284,6 +284,7 @@ def ward_tree(X, *, connectivity=None, n_clusters=None, return_distance=False):
                 stacklevel=2,
             )
         X = np.require(X, requirements="W")
+        import pdb; pdb.set_trace()
         out = hierarchy.ward(X)
         children_ = out[:, :2].astype(np.intp)
 

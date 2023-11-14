@@ -622,6 +622,8 @@ class NeighborsBase(MultiOutputMixin, BaseEstimator, metaclass=ABCMeta):
                 else:
                     self._fit_method = "brute"
 
+        
+
         if (
             # TODO(1.3): remove "wminkowski"
             self.effective_metric_ in ("wminkowski", "minkowski")

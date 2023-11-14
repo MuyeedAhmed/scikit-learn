@@ -404,6 +404,7 @@ class RadiusNeighbors(BaseDistancesReductionDispatcher):
         for the concrete implementation are therefore freed when this classmethod
         returns.
         """
+        print("X.dtype", X.dtype)
         if X.dtype == Y.dtype == np.float64:
             return RadiusNeighbors64.compute(
                 X=X,

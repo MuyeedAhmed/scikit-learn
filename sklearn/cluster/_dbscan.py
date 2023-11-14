@@ -391,6 +391,7 @@ class DBSCAN(ClusterMixin, BaseEstimator):
         )
         neighbors_model.fit(X)
         # This has worst case O(n^2) memory complexity
+
         neighborhoods = neighbors_model.radius_neighbors(X, return_distance=False)
 
         if sample_weight is None:

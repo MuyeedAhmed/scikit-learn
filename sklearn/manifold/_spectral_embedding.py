@@ -311,9 +311,14 @@ def spectral_embedding(
             tol = 0 if eigen_tol == "auto" else eigen_tol
             laplacian *= -1
             v0 = _init_arpack_v0(laplacian.shape[0], random_state)
+            # print("before eigsh", n_components, tol)
+            
+            
             _, diffusion_map = eigsh(
                 laplacian, k=n_components, sigma=1.0, which="LM", tol=tol, v0=v0
             )
+            
+            # print("after eighs")
             embedding = diffusion_map.T[n_components::-1]
             if norm_laplacian:
                 # recover u = D^-1/2 x from the eigenvector output x
