@@ -617,7 +617,8 @@ class NeighborsBase(MultiOutputMixin, BaseEstimator, metaclass=ABCMeta):
                     self._fit_method = "ball_tree"
                 else:
                     self._fit_method = "brute"
-
+        # print(",",self._fit_method)
+        # raise ValueError('')
         if (
             self.effective_metric_ == "minkowski"
             and self.effective_metric_params_["p"] < 1

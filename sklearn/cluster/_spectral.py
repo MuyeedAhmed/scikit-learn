@@ -674,6 +674,7 @@ class SpectralClustering(ClusterMixin, BaseEstimator):
         self : object
             A fitted instance of the estimator.
         """
+        print("EE")
         X = self._validate_data(
             X,
             accept_sparse=["csr", "csc", "coo"],
@@ -693,6 +694,7 @@ class SpectralClustering(ClusterMixin, BaseEstimator):
             )
 
         if self.affinity == "nearest_neighbors":
+            
             connectivity = kneighbors_graph(
                 X, n_neighbors=self.n_neighbors, include_self=True, n_jobs=self.n_jobs
             )
@@ -727,6 +729,7 @@ class SpectralClustering(ClusterMixin, BaseEstimator):
         # The first eigenvector is constant only for fully connected graphs
         # and should be kept for spectral clustering (drop_first = False)
         # See spectral_embedding documentation.
+        
         maps = spectral_embedding(
             self.affinity_matrix_,
             n_components=n_components,
@@ -735,6 +738,7 @@ class SpectralClustering(ClusterMixin, BaseEstimator):
             eigen_tol=self.eigen_tol,
             drop_first=False,
         )
+        print("Map")
         if self.verbose:
             print(f"Computing label assignment using {self.assign_labels}")
 

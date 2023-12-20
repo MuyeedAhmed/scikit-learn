@@ -270,6 +270,10 @@ def ward_tree(X, *, connectivity=None, n_clusters=None, return_distance=False):
         :math:`|*|` is the cardinality of its argument. This is also
         known as the incremental algorithm.
     """
+    # print("ward tree - init")
+    # get_function_memory_usage(ward_tree)
+    # print()
+    
     X = np.asarray(X)
     if X.ndim == 1:
         X = np.reshape(X, (-1, 1))
@@ -290,10 +294,19 @@ def ward_tree(X, *, connectivity=None, n_clusters=None, return_distance=False):
                 ),
                 stacklevel=2,
             )
+        from scipy.spatial.distance import pdist
         X = np.require(X, requirements="W")
+        
+        
+        # hh = pdist(X)
+        # print(hh.shape)
+        # print("before ward")
         out = hierarchy.ward(X)
+        # print("out of ward")
         children_ = out[:, :2].astype(np.intp)
-
+        # print("connectivity out")
+        # get_function_memory_usage(ward_tree)
+        # print()
         if return_distance:
             distances = out[:, 2]
             return children_, 1, n_samples, None, distances
@@ -303,6 +316,9 @@ def ward_tree(X, *, connectivity=None, n_clusters=None, return_distance=False):
     connectivity, n_connected_components = _fix_connectivity(
         X, connectivity, affinity="euclidean"
     )
+    # print("_fix_connectivity")
+    # get_function_memory_usage(ward_tree)
+    # print()
     if n_clusters is None:
         n_nodes = 2 * n_samples - 1
     else:
@@ -313,7 +329,9 @@ def ward_tree(X, *, connectivity=None, n_clusters=None, return_distance=False):
                 "samples." % (n_clusters, n_samples)
             )
         n_nodes = 2 * n_samples - n_clusters
-
+    # print("if 2")
+    # get_function_memory_usage(ward_tree)
+    # print()
     # create inertia matrix
     coord_row = []
     coord_col = []
@@ -330,7 +348,9 @@ def ward_tree(X, *, connectivity=None, n_clusters=None, return_distance=False):
             ]
         )
         coord_col.extend(row)
-
+    # print("end for")
+    # get_function_memory_usage(ward_tree)
+    # print()
     coord_row = np.array(coord_row, dtype=np.intp, order="C")
     coord_col = np.array(coord_col, dtype=np.intp, order="C")
 
@@ -352,10 +372,13 @@ def ward_tree(X, *, connectivity=None, n_clusters=None, return_distance=False):
         distances = np.empty(n_nodes - n_samples)
 
     not_visited = np.empty(n_nodes, dtype=bool, order="C")
-
+    # print("before 2nd for")
+    # get_function_memory_usage(ward_tree)
+    # print()
     # recursive merge loop
     for k in range(n_samples, n_nodes):
         # identify the merge
+        # print(k)
         while True:
             inert, i, j = heappop(inertia)
             if used_node[i] and used_node[j]:
@@ -759,6 +782,22 @@ def _hc_cut(n_clusters, children, n_leaves):
 ###############################################################################
 
 
+import sys
+import inspect
+
+def get_function_memory_usage(func):
+    """
+    Prints the memory consumption of each variable in a function.
+    """
+    total = 0
+    local_variables = inspect.currentframe().f_back.f_locals
+    for var_name, var_value in local_variables.items():
+        var_memory = sys.getsizeof(var_value)
+        # print(f"{var_name}: {var_memory} bytes")
+        total+=var_memory
+    print("Total: ", total/ (1024 ** 3), " GB")
+
+
 class AgglomerativeClustering(ClusterMixin, BaseEstimator):
     """
     Agglomerative Clustering.
@@ -976,7 +1015,7 @@ class AgglomerativeClustering(ClusterMixin, BaseEstimator):
         """
         X = self._validate_data(X, ensure_min_samples=2)
         return self._fit(X)
-
+    
     def _fit(self, X):
         """Fit without validation
 
@@ -992,7 +1031,10 @@ class AgglomerativeClustering(ClusterMixin, BaseEstimator):
             Returns the fitted instance.
         """
         memory = check_memory(self.memory)
-
+        # print("memory = check_memory(self.memory)")
+        # get_function_memory_usage(AgglomerativeClustering._fit)
+        # print()
+        
         self._metric = self.metric
         # TODO(1.4): Remove
         if self.affinity != "deprecated":
@@ -1012,27 +1054,37 @@ class AgglomerativeClustering(ClusterMixin, BaseEstimator):
             self._metric = self.affinity
         elif self.metric is None:
             self._metric = "euclidean"
-
+        
+        # print("if else 1")
+        # get_function_memory_usage(AgglomerativeClustering._fit)
+        # print()
+        
         if not ((self.n_clusters is None) ^ (self.distance_threshold is None)):
             raise ValueError(
                 "Exactly one of n_clusters and "
                 "distance_threshold has to be set, and the other "
                 "needs to be None."
             )
-
+        # print("if 2")
+        # get_function_memory_usage(AgglomerativeClustering._fit)
+        # print()
         if self.distance_threshold is not None and not self.compute_full_tree:
             raise ValueError(
                 "compute_full_tree must be True if distance_threshold is set."
             )
-
+        # print("if 3")
+        # get_function_memory_usage(AgglomerativeClustering._fit)
+        # print()
         if self.linkage == "ward" and self._metric != "euclidean":
             raise ValueError(
                 f"{self._metric} was provided as metric. Ward can only "
                 "work with euclidean distances."
             )
-
+        # print("if 4")
+        # get_function_memory_usage(AgglomerativeClustering._fit)
+        # print()
         tree_builder = _TREE_BUILDERS[self.linkage]
-
+        
         connectivity = self.connectivity
         if self.connectivity is not None:
             if callable(self.connectivity):
@@ -1040,7 +1092,9 @@ class AgglomerativeClustering(ClusterMixin, BaseEstimator):
             connectivity = check_array(
                 connectivity, accept_sparse=["csr", "coo", "lil"]
             )
-
+        # print("if 4")
+        # get_function_memory_usage(AgglomerativeClustering._fit)
+        # print()
         n_samples = len(X)
         compute_full_tree = self.compute_full_tree
         if self.connectivity is None:
@@ -1053,10 +1107,13 @@ class AgglomerativeClustering(ClusterMixin, BaseEstimator):
                 # a large number of clusters. The actual threshold
                 # implemented here is heuristic
                 compute_full_tree = self.n_clusters < max(100, 0.02 * n_samples)
+        # print("if 5")
+        # get_function_memory_usage(AgglomerativeClustering._fit)
+        # print()
         n_clusters = self.n_clusters
         if compute_full_tree:
             n_clusters = None
-
+        # print("compute_full_tree")
         # Construct the tree
         kwargs = {}
         if self.linkage != "ward":
@@ -1066,7 +1123,7 @@ class AgglomerativeClustering(ClusterMixin, BaseEstimator):
         distance_threshold = self.distance_threshold
 
         return_distance = (distance_threshold is not None) or self.compute_distances
-
+        # print("return_distance")
         out = memory.cache(tree_builder)(
             X,
             connectivity=connectivity,
@@ -1074,10 +1131,13 @@ class AgglomerativeClustering(ClusterMixin, BaseEstimator):
             return_distance=return_distance,
             **kwargs,
         )
+        # print("out")
+        # get_function_memory_usage(AgglomerativeClustering._fit)
+        # print()
         (self.children_, self.n_connected_components_, self.n_leaves_, parents) = out[
             :4
         ]
-
+        # print("child")
         if return_distance:
             self.distances_ = out[-1]
 
@@ -1097,6 +1157,9 @@ class AgglomerativeClustering(ClusterMixin, BaseEstimator):
             labels = np.copy(labels[:n_samples])
             # Reassign cluster numbers
             self.labels_ = np.searchsorted(np.unique(labels), labels)
+        # print("if last")
+        # get_function_memory_usage(AgglomerativeClustering._fit)
+        # print()
         return self
 
     def fit_predict(self, X, y=None):

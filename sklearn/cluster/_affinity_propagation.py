@@ -68,22 +68,18 @@ def _affinity_propagation(
 
     # Place preference on the diagonal of S
     S.flat[:: (n_samples + 1)] = preference
-
     A = np.zeros((n_samples, n_samples))
     R = np.zeros((n_samples, n_samples))  # Initialize messages
     # Intermediate results
     tmp = np.zeros((n_samples, n_samples))
-
+    
     # Remove degeneracies
     S += (
         np.finfo(S.dtype).eps * S + np.finfo(S.dtype).tiny * 100
     ) * random_state.standard_normal(size=(n_samples, n_samples))
-
     # Execute parallel affinity propagation updates
     e = np.zeros((n_samples, convergence_iter))
-
     ind = np.arange(n_samples)
-
     for it in range(max_iter):
         # tmp = A + S; compute responsibilities
         np.add(A, S, tmp)

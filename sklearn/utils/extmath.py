@@ -193,7 +193,7 @@ def safe_sparse_dot(a, b, *, dense_output=False):
             ret = np.dot(a, b)
     else:
         ret = a @ b
-
+        print("Ret = a @ b - done")
     if (
         sparse.issparse(a)
         and sparse.issparse(b)
