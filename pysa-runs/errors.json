@@ -1,0 +1,1 @@
+[{"line":534,"column":38,"stop_line":534,"stop_column":50,"path":"sklearn/cluster/_affinity_propagation.py","code":5000,"name":"Shell Out","description":"Shell Out [5000]: Data from [UserControlled] source(s) may reach [ShellExecution] sink(s)","define":"sklearn.cluster._affinity_propagation.AffinityPropagation.fit"}]
