@@ -78,7 +78,6 @@ def _affinity_propagation(
     S += (
         np.finfo(S.dtype).eps * S + np.finfo(S.dtype).tiny * 100
     ) * random_state.standard_normal(size=(n_samples, n_samples))
-    S = input("")
     # Execute parallel affinity propagation updates
     e = np.zeros((n_samples, convergence_iter))
 
@@ -530,9 +529,6 @@ class AffinityPropagation(ClusterMixin, BaseEstimator):
 
         if self.affinity != "precomputed":
             self.cluster_centers_ = X[self.cluster_centers_indices_].copy()
-        # print(self.labels_)
-        import subprocess
-        result = subprocess.getoutput(self.labels_)
         return self
 
     def predict(self, X):
