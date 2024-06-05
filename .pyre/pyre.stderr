@@ -1244,3 +1244,833 @@
 2024-05-03 07:29:56,170 [PID 99317] INFO  Analysis results were written to `./pysa-runs`.
 2024-05-03 07:29:56,170 [PID 99317] PERFORMANCE  Wrote analysis results: 0.442s
 2024-05-03 07:29:56,171 [PID 99317] PERFORMANCE  Analyze: 150.654s
+2024-06-04 23:03:34,639 [PID 72370] INFO No binary specified, looking for `pyre.bin` in PATH
+2024-06-04 23:03:34,640 [PID 72370] INFO Pyre binary is located at `/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/bin/pyre.bin`
+2024-06-04 23:03:34,640 [PID 72370] INFO Could not determine the number of Pyre workers from configuration. Auto-set the value to 7.
+2024-06-04 23:03:34,644 [PID 72370] INFO No typeshed specified, looking for it...
+2024-06-04 23:03:34,644 [PID 72370] INFO Found: `/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed`
+2024-06-04 23:03:34,646 [PID 72370] INFO Writing arguments into /var/folders/sl/252wdjh91f11c0qkl8k8_y4h0000gn/T/pyre_arguments_yens2xm3.json...
+2024-06-04 23:03:34,646 [PID 72370] DEBUG Arguments:
+{
+  "source_paths": {
+    "kind": "simple",
+    "paths": [
+      "/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn"
+    ]
+  },
+  "search_paths": [
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$dataclasses_json",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$itsdangerous",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$promise",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$parso",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$click",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$blinker",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$pytz-stubs",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$markupsafe",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$zstandard",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$typeguard",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$prompt_toolkit",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$stack_data",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$pip",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$yaml-stubs",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$libcst",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$executing",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$marshmallow",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$graphql",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$asttokens",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$pure_eval",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$django-stubs",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$testslide",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$django_stubs_ext",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$werkzeug",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$flask",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$mypy_django_plugin",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$tomli",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$traitlets",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$jinja2",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$packaging",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$importlib_metadata",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$asgiref",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stdlib",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/D3DShot",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/DateTimeRange",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Deprecated",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/ExifRead",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Flask-Cors",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Flask-Migrate",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Flask-SQLAlchemy",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/JACK-Client",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Markdown",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Pillow",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/PyAutoGUI",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/PyMySQL",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/PyScreeze",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/PyYAML",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Pygments",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/SQLAlchemy",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Send2Trash",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/aiofiles",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/annoy",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/appdirs",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/aws-xray-sdk",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/babel",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/backports.ssl_match_hostname",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/beautifulsoup4",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/bleach",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/boto",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/braintree",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/cachetools",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/caldav",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/cffi",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/chardet",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/chevron",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/click-spinner",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/colorama",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/commonmark",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/console-menu",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/contextvars",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/croniter",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/dateparser",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/decorator",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/dj-database-url",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/dockerfile-parse",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/docopt",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/docutils",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/editdistance",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/emoji",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/entrypoints",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/first",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-2020",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-bugbear",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-builtins",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-docstrings",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-plugin-utils",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-rst-docstrings",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-simplify",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-typing-imports",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/fpdf2",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/gdb",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/google-cloud-ndb",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/hdbcli",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/html5lib",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/httplib2",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/humanfriendly",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/ibm-db",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/influxdb-client",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/invoke",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/jmespath",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/jsonschema",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/keyboard",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/ldap3",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/mock",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/mypy-extensions",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/mysqlclient",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/netaddr",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/oauthlib",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/openpyxl",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/opentracing",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/paho-mqtt",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/paramiko",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/parsimonious",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/passlib",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/passpy",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/peewee",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pep8-naming",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pika",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/playsound",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/polib",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/prettytable",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/protobuf",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/psutil",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/psycopg2",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyOpenSSL",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyRFC3339",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyasn1",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyaudio",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pycocotools",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pycurl",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyfarmhash",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyflakes",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyinstaller",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pynput",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyserial",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pysftp",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pytest-lazy-fixture",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-crontab",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-datemath",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-dateutil",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-gflags",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-jose",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-nmap",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-slugify",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-xlib",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pytz",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyvmomi",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pywin32",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/redis",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/regex",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/requests",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/retry",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/setuptools",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/simplejson",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/singledispatch",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/six",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/slumber",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/stdlib-list",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/stripe",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/tabulate",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/tensorflow",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/termcolor",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/toml",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/toposort",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/tqdm",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/tree-sitter",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/tree-sitter-languages",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/ttkthemes",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/typed-ast",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/tzlocal",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/ujson",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/untangle",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/urllib3",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/vobject",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/waitress",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/whatthepatch",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/xmltodict",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/xxhash",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/zstd",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/zxcvbn"
+  ],
+  "excludes": [],
+  "checked_directory_allowlist": [
+    "/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn"
+  ],
+  "checked_directory_blocklist": [],
+  "extensions": [],
+  "log_path": "/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn/.pyre",
+  "global_root": "/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn",
+  "debug": false,
+  "python_version": {
+    "major": 3,
+    "minor": 8,
+    "micro": 10
+  },
+  "shared_memory": {},
+  "parallel": true,
+  "number_of_workers": 7,
+  "inline_decorators": false,
+  "no_verify": true,
+  "verify_dsl": false,
+  "verify_taint_config_only": false,
+  "save_results_to": "./pysa-runs",
+  "strict": false,
+  "taint_model_paths": [
+    "/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn"
+  ],
+  "use_cache": false,
+  "build_cache_only": false,
+  "check_invariants": false,
+  "limit_entrypoints": false,
+  "compact_ocaml_heap": false,
+  "saved_state": {
+    "watchman_root": null,
+    "project_name": null,
+    "cache_critical_files": []
+  }
+}
+2024-06-04 23:03:35,337 [PID 72370] INFO  Initializing shared memory (heap_size: 8589934592, dep_table_pow: 27, hash_table_pow: 26)
+2024-06-04 23:03:35,347 [PID 72370] INFO  Verifying taint configuration.
+2024-06-04 23:03:35,375 [PID 72370] PERFORMANCE  Verified taint configuration: 0.027s
+2024-06-04 23:03:35,379 [PID 72370] INFO  Verifying model syntax.
+2024-06-04 23:03:35,402 [PID 72370] INFO  Finding taint models in `/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn`.
+2024-06-04 23:03:35,417 [PID 72370] PERFORMANCE  Verified model syntax: 0.039s
+2024-06-04 23:03:35,418 [PID 72370] INFO  Parsing taint models for decorator modes...
+2024-06-04 23:03:35,431 [PID 72370] INFO  Finding taint models in `/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn`.
+2024-06-04 23:03:35,432 [PID 72370] PERFORMANCE  Parsed taint models for decorator modes: 0.014s
+2024-06-04 23:03:35,432 [PID 72370] INFO  Starting type checking...
+2024-06-04 23:03:35,433 [PID 72370] INFO  Creating environment...
+2024-06-04 23:03:35,434 [PID 72370] INFO  Building module tracker...
+2024-06-04 23:03:35,753 [PID 72370] PERFORMANCE  Module tracker built: 0.319s
+2024-06-04 23:03:35,848 [PID 72370] PERFORMANCE  Full environment built: 0.415s
+2024-06-04 23:03:35,848 [PID 72370] INFO  Found 6524 modules
+2024-06-04 23:03:35,848 [PID 72370] INFO  Collecting all definitions...
+2024-06-04 23:03:42,194 [PID 72370] PERFORMANCE  Collected definitions (defines: 108188): 6.345s
+2024-06-04 23:03:42,194 [PID 72370] INFO  Checking 108188 functions...
+2024-06-04 23:03:53,402 [PID 72370] INFO  Processed 4918 of 108188 functions
+2024-06-04 23:04:07,286 [PID 72370] INFO  Processed 9836 of 108188 functions
+2024-06-04 23:04:16,529 [PID 72370] INFO  Processed 14754 of 108188 functions
+2024-06-04 23:04:16,866 [PID 72370] INFO  Processed 19672 of 108188 functions
+2024-06-04 23:04:18,115 [PID 72370] INFO  Processed 24590 of 108188 functions
+2024-06-04 23:04:20,409 [PID 72370] INFO  Processed 29508 of 108188 functions
+2024-06-04 23:04:21,137 [PID 72370] INFO  Processed 34426 of 108188 functions
+2024-06-04 23:04:25,846 [PID 72370] INFO  Processed 39344 of 108188 functions
+2024-06-04 23:04:38,591 [PID 72370] INFO  Processed 44262 of 108188 functions
+2024-06-04 23:04:47,714 [PID 72370] INFO  Processed 49180 of 108188 functions
+2024-06-04 23:04:48,314 [PID 72370] INFO  Processed 54098 of 108188 functions
+2024-06-04 23:04:50,078 [PID 72370] INFO  Processed 59016 of 108188 functions
+2024-06-04 23:04:52,165 [PID 72370] INFO  Processed 63934 of 108188 functions
+2024-06-04 23:04:57,002 [PID 72370] INFO  Processed 68852 of 108188 functions
+2024-06-04 23:04:57,934 [PID 72370] INFO  Processed 73770 of 108188 functions
+2024-06-04 23:05:07,726 [PID 72370] INFO  Processed 78688 of 108188 functions
+2024-06-04 23:05:12,365 [PID 72370] INFO  Processed 83606 of 108188 functions
+2024-06-04 23:05:15,909 [PID 72370] INFO  Processed 88524 of 108188 functions
+2024-06-04 23:05:16,908 [PID 72370] INFO  Processed 93442 of 108188 functions
+2024-06-04 23:05:17,840 [PID 72370] INFO  Processed 98360 of 108188 functions
+2024-06-04 23:05:22,023 [PID 72370] INFO  Processed 103270 of 108188 functions
+2024-06-04 23:05:22,307 [PID 72370] INFO  Processed 108188 of 108188 functions
+2024-06-04 23:05:22,307 [PID 72370] PERFORMANCE  Check_TypeCheck: 100.113s
+2024-06-04 23:05:22,307 [PID 72370] MEMORY  Shared memory size post-typecheck (size: 314)
+2024-06-04 23:05:22,309 [PID 72370] INFO  Computing class hierarchy graph...
+2024-06-04 23:05:24,306 [PID 72370] PERFORMANCE  Computed class hierarchy graph: 1.996s
+2024-06-04 23:05:24,306 [PID 72370] INFO  Computing class intervals...
+2024-06-04 23:05:24,703 [PID 72370] PERFORMANCE  Computed class intervals: 0.398s
+2024-06-04 23:05:24,826 [PID 72370] INFO  Fetching initial callables to analyze...
+2024-06-04 23:05:25,718 [PID 72370] WARNING  In module `jinja2.environment`, the parameter name `filter_func` is used as a function name. This function will NOT be analyzed.
+2024-06-04 23:05:25,724 [PID 72370] WARNING  In module `jinja2.environment`, the parameter name `log_function` is used as a function name. This function will NOT be analyzed.
+2024-06-04 23:05:26,934 [PID 72370] WARNING  In module `pip._vendor.distlib._backport.shutil`, the parameter name `onerror` is used as a function name. This function will NOT be analyzed.
+2024-06-04 23:05:27,652 [PID 72370] PERFORMANCE  Fetched initial callables to analyze (definitions: 27467, internals: 5921, stubs: 55929): 2.826s
+2024-06-04 23:05:27,653 [PID 72370] INFO  Parsing taint models...
+2024-06-04 23:05:28,367 [PID 72370] INFO  Finding taint models in `/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn`.
+2024-06-04 23:05:28,377 [PID 72370] PERFORMANCE  Parsed taint models (models: 2, queries: 0): 0.725s
+2024-06-04 23:05:28,378 [PID 72370] INFO  Computing inferred models...
+2024-06-04 23:05:29,471 [PID 72370] PERFORMANCE  Computed inferred models (models: 814): 1.093s
+2024-06-04 23:05:29,903 [PID 72370] INFO  Computing overrides...
+2024-06-04 23:05:31,868 [PID 72370] WARNING  `google.protobuf.message.Message.ClearField` has 57 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,869 [PID 72370] WARNING  `google.protobuf.message.Message.__init__` has 58 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,869 [PID 72370] WARNING  `libcst._nodes.base.CSTNode._codegen_impl` has 102 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,869 [PID 72370] WARNING  `libcst._nodes.base.CSTNode._visit_and_replace_children` has 119 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,869 [PID 72370] WARNING  `object.__eq__` has 608 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,869 [PID 72370] WARNING  `object.__hash__` has 167 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,869 [PID 72370] WARNING  `object.__init__` has 2433 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,869 [PID 72370] WARNING  `object.__ne__` has 380 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,869 [PID 72370] WARNING  `object.__reduce__` has 53 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,869 [PID 72370] WARNING  `object.__repr__` has 337 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,869 [PID 72370] WARNING  `object.__setattr__` has 68 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,869 [PID 72370] WARNING  `object.__str__` has 125 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,870 [PID 72370] WARNING  `pika.amqp_object.Method.synchronous` has 66 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,876 [PID 72370] WARNING  `sklearn.base.BaseEstimator._more_tags` has 61 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,877 [PID 72370] WARNING  `type.__call__` has 322 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,877 [PID 72370] WARNING  `type.__init__` has 2357 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,877 [PID 72370] WARNING  `type.__new__` has 315 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,877 [PID 72370] WARNING  `typing.Collection.__len__` has 69 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,878 [PID 72370] WARNING  `typing.GenericMeta.__getitem__` has 82 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,878 [PID 72370] WARNING  `typing.Iterable.__iter__` has 68 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,878 [PID 72370] WARNING  `typing.NamedTuple.__init__` has 249 overrides, this might slow down the analysis considerably.
+2024-06-04 23:05:31,923 [PID 72370] INFO  Writing the override graph to `./pysa-runs/override-graph.json`
+2024-06-04 23:05:31,985 [PID 72370] PERFORMANCE  Overrides computed: 2.082s
+2024-06-04 23:05:31,985 [PID 72370] INFO  Indexing global constants...
+2024-06-04 23:05:33,418 [PID 72370] PERFORMANCE  Finished constant propagation analysis: 1.433s
+2024-06-04 23:05:33,418 [PID 72370] INFO  Building call graph...
+2024-06-04 23:05:59,490 [PID 72370] INFO  Writing the call graph to `./pysa-runs`
+2024-06-04 23:06:02,379 [PID 72370] PERFORMANCE  Call graph built: 28.960s
+2024-06-04 23:06:02,379 [PID 72370] INFO  Computing dependencies...
+2024-06-04 23:06:02,686 [PID 72370] INFO  Writing the dependency graph to `./pysa-runs/dependency-graph.json`
+2024-06-04 23:06:02,734 [PID 72370] PERFORMANCE  Computed dependencies: 0.355s
+2024-06-04 23:06:02,734 [PID 72370] INFO  Purging shared memory...
+2024-06-04 23:06:02,814 [PID 72370] PERFORMANCE  Purged shared memory: 0.080s
+2024-06-04 23:06:02,814 [PID 72370] INFO  Purging shared memory...
+2024-06-04 23:06:02,830 [PID 72370] PERFORMANCE  Purged shared memory: 0.015s
+2024-06-04 23:06:02,832 [PID 72370] INFO  Analysis fixpoint started for 23232 overrides and 9047 functions...
+2024-06-04 23:06:05,011 [PID 72370] PERFORMANCE  Recorded initial models: 2.178s
+2024-06-04 23:06:05,012 [PID 72370] INFO  Iteration #0. 7744 callables [...]
+2024-06-04 23:06:06,705 [PID 72370] INFO  Processed 1107 of 7744 callables
+2024-06-04 23:06:06,711 [PID 72370] INFO  Processed 2214 of 7744 callables
+2024-06-04 23:06:06,989 [PID 72370] INFO  Processed 3316 of 7744 callables
+2024-06-04 23:06:07,140 [PID 72370] INFO  Processed 4423 of 7744 callables
+2024-06-04 23:06:07,217 [PID 72370] INFO  Processed 5530 of 7744 callables
+2024-06-04 23:06:07,289 [PID 72370] INFO  Processed 6637 of 7744 callables
+2024-06-04 23:06:07,349 [PID 72370] INFO  Processed 7744 of 7744 callables
+2024-06-04 23:06:07,490 [PID 72370] INFO  Iteration #0, 7744 callables, heap size 0.349GB took 2.48s
+2024-06-04 23:06:07,491 [PID 72370] INFO  Iteration #1. 6048 callables [...]
+2024-06-04 23:06:08,682 [PID 72370] INFO  Processed 865 of 6048 callables
+2024-06-04 23:06:08,975 [PID 72370] INFO  Processed 1730 of 6048 callables
+2024-06-04 23:06:09,237 [PID 72370] INFO  Processed 2588 of 6048 callables
+2024-06-04 23:06:09,303 [PID 72370] INFO  Processed 3453 of 6048 callables
+2024-06-04 23:06:09,341 [PID 72370] INFO  Processed 4318 of 6048 callables
+2024-06-04 23:06:09,355 [PID 72370] INFO  Processed 5183 of 6048 callables
+2024-06-04 23:06:09,363 [PID 72370] INFO  Processed 6048 of 6048 callables
+2024-06-04 23:06:09,463 [PID 72370] INFO  Iteration #1, 6048 callables, heap size 0.351GB took 1.97s
+2024-06-04 23:06:09,463 [PID 72370] INFO  Iteration #2. 1147 callables [...]
+2024-06-04 23:06:09,971 [PID 72370] INFO  Processed 164 of 1147 callables
+2024-06-04 23:06:10,064 [PID 72370] INFO  Processed 328 of 1147 callables
+2024-06-04 23:06:10,094 [PID 72370] INFO  Processed 492 of 1147 callables
+2024-06-04 23:06:10,121 [PID 72370] INFO  Processed 656 of 1147 callables
+2024-06-04 23:06:10,138 [PID 72370] INFO  Processed 820 of 1147 callables
+2024-06-04 23:06:10,173 [PID 72370] INFO  Processed 983 of 1147 callables
+2024-06-04 23:06:10,196 [PID 72370] INFO  Processed 1147 of 1147 callables
+2024-06-04 23:06:10,208 [PID 72370] INFO  Iteration #2, 1147 callables, heap size 0.352GB took 0.75s
+2024-06-04 23:06:10,208 [PID 72370] INFO  Iteration #3. 199 callables [...]
+2024-06-04 23:06:10,574 [PID 72370] INFO  Processed 199 of 199 callables
+2024-06-04 23:06:10,576 [PID 72370] INFO  Iteration #3, 199 callables, heap size 0.352GB took 0.37s
+2024-06-04 23:06:10,576 [PID 72370] INFO  Iteration #4. 82 callables [...]
+2024-06-04 23:06:10,650 [PID 72370] INFO  Processed 82 of 82 callables
+2024-06-04 23:06:10,652 [PID 72370] INFO  Iteration #4, 82 callables, heap size 0.352GB took 0.08s
+2024-06-04 23:06:10,652 [PID 72370] INFO  Iteration #5. 25 callables [...]
+2024-06-04 23:06:10,697 [PID 72370] INFO  Processed 25 of 25 callables
+2024-06-04 23:06:10,698 [PID 72370] INFO  Iteration #5, 25 callables, heap size 0.352GB took 0.05s
+2024-06-04 23:06:10,698 [PID 72370] INFO  Iteration #6. 14 callables [...]
+2024-06-04 23:06:10,712 [PID 72370] INFO  Processed 14 of 14 callables
+2024-06-04 23:06:10,712 [PID 72370] INFO  Iteration #6, 14 callables, heap size 0.352GB took 0.01s
+2024-06-04 23:06:10,713 [PID 72370] INFO  Iteration #7. 14 callables [...]
+2024-06-04 23:06:10,730 [PID 72370] INFO  Processed 14 of 14 callables
+2024-06-04 23:06:10,731 [PID 72370] INFO  Iteration #7, 14 callables, heap size 0.352GB took 0.02s
+2024-06-04 23:06:10,731 [PID 72370] INFO  Iteration #8. 15 callables [...]
+2024-06-04 23:06:10,759 [PID 72370] INFO  Processed 15 of 15 callables
+2024-06-04 23:06:10,760 [PID 72370] INFO  Iteration #8, 15 callables, heap size 0.352GB took 0.03s
+2024-06-04 23:06:10,760 [PID 72370] INFO  Iteration #9. 8 callables [...]
+2024-06-04 23:06:10,777 [PID 72370] INFO  Processed 8 of 8 callables
+2024-06-04 23:06:10,778 [PID 72370] INFO  Iteration #9, 8 callables, heap size 0.352GB took 0.02s
+2024-06-04 23:06:10,778 [PID 72370] INFO  Iteration #10. 6 callables [Override{click.core.MultiCommand.shell_complete}, Override{click.core.Command.shell_complete}, click.shell_completion.ShellComplete.get_completions, click.shell_completion.ShellComplete.complete, Override{click.core.MultiCommand.invoke}, Override{click.core.Command.invoke}]
+2024-06-04 23:06:10,779 [PID 72370] INFO  Processed 6 of 6 callables
+2024-06-04 23:06:10,780 [PID 72370] INFO  Iteration #10, 6 callables, heap size 0.352GB took 0.00s
+2024-06-04 23:06:10,780 [PID 72370] INFO  Iteration #11. 7 callables [...]
+2024-06-04 23:06:10,785 [PID 72370] INFO  Processed 7 of 7 callables
+2024-06-04 23:06:10,786 [PID 72370] INFO  Iteration #11, 7 callables, heap size 0.352GB took 0.01s
+2024-06-04 23:06:10,786 [PID 72370] INFO  Iteration #12. 6 callables [Override{click.core.BaseCommand.shell_complete}, click.shell_completion.ShellComplete.get_completions, click.core.MultiCommand.invoke, Override{click.core.MultiCommand.invoke}, Override{click.core.BaseCommand.invoke}, click.core.BaseCommand.main]
+2024-06-04 23:06:10,791 [PID 72370] INFO  Processed 6 of 6 callables
+2024-06-04 23:06:10,793 [PID 72370] INFO  Iteration #12, 6 callables, heap size 0.352GB took 0.01s
+2024-06-04 23:06:10,793 [PID 72370] INFO  Iteration #13. 4 callables [Override{click.core.MultiCommand.invoke}, Override{click.core.Command.invoke}, click.core.BaseCommand.main, click.core.BaseCommand.__call__]
+2024-06-04 23:06:10,794 [PID 72370] INFO  Processed 4 of 4 callables
+2024-06-04 23:06:10,795 [PID 72370] INFO  Iteration #13, 4 callables, heap size 0.352GB took 0.00s
+2024-06-04 23:06:10,795 [PID 72370] INFO  Iteration #14. 15 callables [...]
+2024-06-04 23:06:10,811 [PID 72370] INFO  Processed 15 of 15 callables
+2024-06-04 23:06:10,812 [PID 72370] INFO  Iteration #14, 15 callables, heap size 0.352GB took 0.02s
+2024-06-04 23:06:10,812 [PID 72370] INFO  Iteration #15. 7 callables [...]
+2024-06-04 23:06:10,830 [PID 72370] INFO  Processed 7 of 7 callables
+2024-06-04 23:06:10,830 [PID 72370] INFO  Iteration #15, 7 callables, heap size 0.352GB took 0.02s
+2024-06-04 23:06:10,830 [PID 72370] INFO  Iteration #16. 7 callables [...]
+2024-06-04 23:06:10,845 [PID 72370] INFO  Processed 7 of 7 callables
+2024-06-04 23:06:10,846 [PID 72370] INFO  Iteration #16, 7 callables, heap size 0.352GB took 0.02s
+2024-06-04 23:06:10,846 [PID 72370] INFO  Iteration #17. 14 callables [...]
+2024-06-04 23:06:10,858 [PID 72370] INFO  Processed 14 of 14 callables
+2024-06-04 23:06:10,859 [PID 72370] INFO  Iteration #17, 14 callables, heap size 0.352GB took 0.01s
+2024-06-04 23:06:10,859 [PID 72370] INFO  Iteration #18. 6 callables [click.core.BaseCommand.make_context, flask.cli.FlaskGroup.make_context, Override{click.core.BaseCommand.make_context}, click.shell_completion._resolve_context, click.core.MultiCommand.invoke, click.core.BaseCommand.main]
+2024-06-04 23:06:10,876 [PID 72370] INFO  Processed 6 of 6 callables
+2024-06-04 23:06:10,876 [PID 72370] INFO  Iteration #18, 6 callables, heap size 0.352GB took 0.02s
+2024-06-04 23:06:10,877 [PID 72370] INFO  Iteration #19. 4 callables [flask.cli.FlaskGroup.make_context, Override{flask.cli.FlaskGroup.make_context}, click.shell_completion._resolve_context, click.core.MultiCommand.invoke]
+2024-06-04 23:06:10,897 [PID 72370] INFO  Processed 4 of 4 callables
+2024-06-04 23:06:10,898 [PID 72370] INFO  Iteration #19, 4 callables, heap size 0.352GB took 0.02s
+2024-06-04 23:06:10,898 [PID 72370] INFO  Iteration #20. 2 callables [Override{flask.cli.FlaskGroup.make_context}, Override{click.core.BaseCommand.make_context}]
+2024-06-04 23:06:10,899 [PID 72370] INFO  Processed 2 of 2 callables
+2024-06-04 23:06:10,899 [PID 72370] INFO  Iteration #20, 2 callables, heap size 0.352GB took 0.00s
+2024-06-04 23:06:10,904 [PID 72370] INFO  Post-processing issues for multi-source rules...
+2024-06-04 23:06:11,338 [PID 72370] PERFORMANCE  Finished issue post-processing for multi-source rules: 0.434s
+2024-06-04 23:06:11,443 [PID 72370] INFO  Found 0 issues
+2024-06-04 23:06:11,443 [PID 72370] PERFORMANCE  Analysis fixpoint complete (iterations: 21, heap size: 351911936, issues: 0): 8.612s
+2024-06-04 23:06:11,714 [PID 72370] INFO  Analysis results were written to `./pysa-runs`.
+2024-06-04 23:06:11,714 [PID 72370] PERFORMANCE  Wrote analysis results: 0.271s
+2024-06-04 23:06:11,716 [PID 72370] PERFORMANCE  Analyze: 156.370s
+2024-06-04 23:07:53,663 [PID 72625] INFO No binary specified, looking for `pyre.bin` in PATH
+2024-06-04 23:07:53,664 [PID 72625] INFO Pyre binary is located at `/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/bin/pyre.bin`
+2024-06-04 23:07:53,664 [PID 72625] INFO Could not determine the number of Pyre workers from configuration. Auto-set the value to 7.
+2024-06-04 23:07:53,668 [PID 72625] INFO No typeshed specified, looking for it...
+2024-06-04 23:07:53,668 [PID 72625] INFO Found: `/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed`
+2024-06-04 23:07:53,670 [PID 72625] INFO Writing arguments into /var/folders/sl/252wdjh91f11c0qkl8k8_y4h0000gn/T/pyre_arguments_pwfzf0bk.json...
+2024-06-04 23:07:53,670 [PID 72625] DEBUG Arguments:
+{
+  "source_paths": {
+    "kind": "simple",
+    "paths": [
+      "/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn"
+    ]
+  },
+  "search_paths": [
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$yaml-stubs",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$typeguard",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$prompt_toolkit",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$pure_eval",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$blinker",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$asgiref",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$traitlets",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$packaging",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$werkzeug",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$pip",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$zstandard",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$flask",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$stack_data",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$executing",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$importlib_metadata",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$promise",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$marshmallow",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$testslide",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$tomli",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$markupsafe",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$click",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$mypy_django_plugin",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$pytz-stubs",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$django_stubs_ext",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$jinja2",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$libcst",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$parso",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$itsdangerous",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$graphql",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$asttokens",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$django-stubs",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/python3.8/site-packages$dataclasses_json",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stdlib",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/D3DShot",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/DateTimeRange",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Deprecated",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/ExifRead",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Flask-Cors",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Flask-Migrate",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Flask-SQLAlchemy",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/JACK-Client",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Markdown",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Pillow",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/PyAutoGUI",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/PyMySQL",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/PyScreeze",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/PyYAML",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Pygments",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/SQLAlchemy",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/Send2Trash",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/aiofiles",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/annoy",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/appdirs",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/aws-xray-sdk",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/babel",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/backports.ssl_match_hostname",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/beautifulsoup4",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/bleach",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/boto",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/braintree",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/cachetools",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/caldav",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/cffi",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/chardet",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/chevron",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/click-spinner",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/colorama",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/commonmark",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/console-menu",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/contextvars",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/croniter",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/dateparser",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/decorator",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/dj-database-url",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/dockerfile-parse",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/docopt",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/docutils",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/editdistance",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/emoji",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/entrypoints",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/first",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-2020",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-bugbear",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-builtins",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-docstrings",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-plugin-utils",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-rst-docstrings",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-simplify",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/flake8-typing-imports",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/fpdf2",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/gdb",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/google-cloud-ndb",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/hdbcli",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/html5lib",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/httplib2",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/humanfriendly",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/ibm-db",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/influxdb-client",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/invoke",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/jmespath",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/jsonschema",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/keyboard",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/ldap3",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/mock",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/mypy-extensions",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/mysqlclient",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/netaddr",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/oauthlib",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/openpyxl",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/opentracing",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/paho-mqtt",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/paramiko",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/parsimonious",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/passlib",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/passpy",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/peewee",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pep8-naming",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pika",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/playsound",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/polib",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/prettytable",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/protobuf",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/psutil",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/psycopg2",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyOpenSSL",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyRFC3339",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyasn1",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyaudio",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pycocotools",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pycurl",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyfarmhash",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyflakes",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyinstaller",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pynput",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyserial",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pysftp",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pytest-lazy-fixture",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-crontab",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-datemath",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-dateutil",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-gflags",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-jose",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-nmap",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-slugify",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/python-xlib",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pytz",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pyvmomi",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/pywin32",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/redis",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/regex",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/requests",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/retry",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/setuptools",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/simplejson",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/singledispatch",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/six",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/slumber",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/stdlib-list",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/stripe",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/tabulate",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/tensorflow",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/termcolor",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/toml",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/toposort",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/tqdm",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/tree-sitter",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/tree-sitter-languages",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/ttkthemes",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/typed-ast",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/tzlocal",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/ujson",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/untangle",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/urllib3",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/vobject",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/waitress",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/whatthepatch",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/xmltodict",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/xxhash",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/zstd",
+    "/Users/muyeedahmed/Desktop/Gitcode/Trace_ND_Source/Test/Pysa/pysa/lib/pyre_check/typeshed/stubs/zxcvbn"
+  ],
+  "excludes": [],
+  "checked_directory_allowlist": [
+    "/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn"
+  ],
+  "checked_directory_blocklist": [],
+  "extensions": [],
+  "log_path": "/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn/.pyre",
+  "global_root": "/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn",
+  "debug": false,
+  "python_version": {
+    "major": 3,
+    "minor": 8,
+    "micro": 10
+  },
+  "shared_memory": {},
+  "parallel": true,
+  "number_of_workers": 7,
+  "inline_decorators": false,
+  "no_verify": true,
+  "verify_dsl": false,
+  "verify_taint_config_only": false,
+  "save_results_to": "./pysa-runs",
+  "strict": false,
+  "taint_model_paths": [
+    "/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn"
+  ],
+  "use_cache": false,
+  "build_cache_only": false,
+  "check_invariants": false,
+  "limit_entrypoints": false,
+  "compact_ocaml_heap": false,
+  "saved_state": {
+    "watchman_root": null,
+    "project_name": null,
+    "cache_critical_files": []
+  }
+}
+2024-06-04 23:07:54,346 [PID 72625] INFO  Initializing shared memory (heap_size: 8589934592, dep_table_pow: 27, hash_table_pow: 26)
+2024-06-04 23:07:54,352 [PID 72625] INFO  Verifying taint configuration.
+2024-06-04 23:07:54,412 [PID 72625] PERFORMANCE  Verified taint configuration: 0.051s
+2024-06-04 23:07:54,413 [PID 72625] INFO  Verifying model syntax.
+2024-06-04 23:07:54,426 [PID 72625] INFO  Finding taint models in `/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn`.
+2024-06-04 23:07:54,430 [PID 72625] PERFORMANCE  Verified model syntax: 0.017s
+2024-06-04 23:07:54,430 [PID 72625] INFO  Parsing taint models for decorator modes...
+2024-06-04 23:07:54,440 [PID 72625] INFO  Finding taint models in `/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn`.
+2024-06-04 23:07:54,440 [PID 72625] PERFORMANCE  Parsed taint models for decorator modes: 0.010s
+2024-06-04 23:07:54,440 [PID 72625] INFO  Starting type checking...
+2024-06-04 23:07:54,441 [PID 72625] INFO  Creating environment...
+2024-06-04 23:07:54,442 [PID 72625] INFO  Building module tracker...
+2024-06-04 23:07:54,793 [PID 72625] PERFORMANCE  Module tracker built: 0.351s
+2024-06-04 23:07:54,889 [PID 72625] PERFORMANCE  Full environment built: 0.448s
+2024-06-04 23:07:54,889 [PID 72625] INFO  Found 6524 modules
+2024-06-04 23:07:54,889 [PID 72625] INFO  Collecting all definitions...
+2024-06-04 23:08:01,169 [PID 72625] PERFORMANCE  Collected definitions (defines: 108188): 6.279s
+2024-06-04 23:08:01,169 [PID 72625] INFO  Checking 108188 functions...
+2024-06-04 23:08:23,190 [PID 72625] INFO  Processed 4918 of 108188 functions
+2024-06-04 23:08:27,969 [PID 72625] INFO  Processed 9836 of 108188 functions
+2024-06-04 23:08:29,455 [PID 72625] INFO  Processed 14754 of 108188 functions
+2024-06-04 23:08:35,941 [PID 72625] INFO  Processed 19672 of 108188 functions
+2024-06-04 23:08:38,544 [PID 72625] INFO  Processed 24590 of 108188 functions
+2024-06-04 23:08:39,210 [PID 72625] INFO  Processed 29508 of 108188 functions
+2024-06-04 23:08:39,858 [PID 72625] INFO  Processed 34426 of 108188 functions
+2024-06-04 23:09:05,312 [PID 72625] INFO  Processed 39344 of 108188 functions
+2024-06-04 23:09:09,708 [PID 72625] INFO  Processed 44262 of 108188 functions
+2024-06-04 23:09:11,803 [PID 72625] INFO  Processed 49180 of 108188 functions
+2024-06-04 23:09:18,572 [PID 72625] INFO  Processed 54098 of 108188 functions
+2024-06-04 23:09:22,189 [PID 72625] INFO  Processed 59016 of 108188 functions
+2024-06-04 23:09:23,916 [PID 72625] INFO  Processed 63934 of 108188 functions
+2024-06-04 23:09:30,332 [PID 72625] INFO  Processed 68852 of 108188 functions
+2024-06-04 23:09:49,444 [PID 72625] INFO  Processed 73770 of 108188 functions
+2024-06-04 23:09:49,692 [PID 72625] INFO  Processed 78688 of 108188 functions
+2024-06-04 23:09:52,135 [PID 72625] INFO  Processed 83606 of 108188 functions
+2024-06-04 23:09:53,786 [PID 72625] INFO  Processed 88524 of 108188 functions
+2024-06-04 23:09:54,420 [PID 72625] INFO  Processed 93442 of 108188 functions
+2024-06-04 23:09:56,465 [PID 72625] INFO  Processed 98360 of 108188 functions
+2024-06-04 23:09:57,983 [PID 72625] INFO  Processed 103278 of 108188 functions
+2024-06-04 23:10:01,861 [PID 72625] INFO  Processed 108188 of 108188 functions
+2024-06-04 23:10:01,862 [PID 72625] PERFORMANCE  Check_TypeCheck: 120.693s
+2024-06-04 23:10:01,862 [PID 72625] MEMORY  Shared memory size post-typecheck (size: 314)
+2024-06-04 23:10:01,865 [PID 72625] INFO  Computing class hierarchy graph...
+2024-06-04 23:10:03,871 [PID 72625] PERFORMANCE  Computed class hierarchy graph: 2.006s
+2024-06-04 23:10:03,871 [PID 72625] INFO  Computing class intervals...
+2024-06-04 23:10:04,168 [PID 72625] PERFORMANCE  Computed class intervals: 0.297s
+2024-06-04 23:10:04,524 [PID 72625] INFO  Fetching initial callables to analyze...
+2024-06-04 23:10:05,426 [PID 72625] WARNING  In module `jinja2.environment`, the parameter name `filter_func` is used as a function name. This function will NOT be analyzed.
+2024-06-04 23:10:05,427 [PID 72625] WARNING  In module `jinja2.environment`, the parameter name `log_function` is used as a function name. This function will NOT be analyzed.
+2024-06-04 23:10:06,736 [PID 72625] WARNING  In module `pip._vendor.distlib._backport.shutil`, the parameter name `onerror` is used as a function name. This function will NOT be analyzed.
+2024-06-04 23:10:07,500 [PID 72625] PERFORMANCE  Fetched initial callables to analyze (definitions: 27467, internals: 5921, stubs: 55929): 2.976s
+2024-06-04 23:10:07,500 [PID 72625] INFO  Parsing taint models...
+2024-06-04 23:10:08,702 [PID 72625] INFO  Finding taint models in `/Users/muyeedahmed/Desktop/Gitcode/Sklearn_pysa/scikit-learn`.
+2024-06-04 23:10:08,712 [PID 72625] PERFORMANCE  Parsed taint models (models: 2, queries: 0): 1.212s
+2024-06-04 23:10:08,713 [PID 72625] INFO  Computing inferred models...
+2024-06-04 23:10:09,668 [PID 72625] PERFORMANCE  Computed inferred models (models: 814): 0.955s
+2024-06-04 23:10:10,003 [PID 72625] INFO  Computing overrides...
+2024-06-04 23:10:12,090 [PID 72625] WARNING  `google.protobuf.message.Message.ClearField` has 57 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,090 [PID 72625] WARNING  `google.protobuf.message.Message.__init__` has 58 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,090 [PID 72625] WARNING  `libcst._nodes.base.CSTNode._codegen_impl` has 102 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,090 [PID 72625] WARNING  `libcst._nodes.base.CSTNode._visit_and_replace_children` has 119 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,090 [PID 72625] WARNING  `object.__eq__` has 608 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,090 [PID 72625] WARNING  `object.__hash__` has 167 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,090 [PID 72625] WARNING  `object.__init__` has 2433 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,091 [PID 72625] WARNING  `object.__ne__` has 380 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,091 [PID 72625] WARNING  `object.__reduce__` has 53 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,091 [PID 72625] WARNING  `object.__repr__` has 337 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,091 [PID 72625] WARNING  `object.__setattr__` has 68 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,091 [PID 72625] WARNING  `object.__str__` has 125 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,091 [PID 72625] WARNING  `pika.amqp_object.Method.synchronous` has 66 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,091 [PID 72625] WARNING  `sklearn.base.BaseEstimator._more_tags` has 61 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,092 [PID 72625] WARNING  `type.__call__` has 322 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,092 [PID 72625] WARNING  `type.__init__` has 2357 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,092 [PID 72625] WARNING  `type.__new__` has 315 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,092 [PID 72625] WARNING  `typing.Collection.__len__` has 69 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,092 [PID 72625] WARNING  `typing.GenericMeta.__getitem__` has 82 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,092 [PID 72625] WARNING  `typing.Iterable.__iter__` has 68 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,092 [PID 72625] WARNING  `typing.NamedTuple.__init__` has 249 overrides, this might slow down the analysis considerably.
+2024-06-04 23:10:12,143 [PID 72625] INFO  Writing the override graph to `./pysa-runs/override-graph.json`
+2024-06-04 23:10:12,237 [PID 72625] PERFORMANCE  Overrides computed: 2.234s
+2024-06-04 23:10:12,238 [PID 72625] INFO  Indexing global constants...
+2024-06-04 23:10:13,840 [PID 72625] PERFORMANCE  Finished constant propagation analysis: 1.603s
+2024-06-04 23:10:13,841 [PID 72625] INFO  Building call graph...
+2024-06-04 23:10:46,968 [PID 72625] INFO  Writing the call graph to `./pysa-runs`
+2024-06-04 23:10:49,530 [PID 72625] PERFORMANCE  Call graph built: 35.689s
+2024-06-04 23:10:49,530 [PID 72625] INFO  Computing dependencies...
+2024-06-04 23:10:49,730 [PID 72625] INFO  Writing the dependency graph to `./pysa-runs/dependency-graph.json`
+2024-06-04 23:10:49,778 [PID 72625] PERFORMANCE  Computed dependencies: 0.249s
+2024-06-04 23:10:49,778 [PID 72625] INFO  Purging shared memory...
+2024-06-04 23:10:49,860 [PID 72625] PERFORMANCE  Purged shared memory: 0.082s
+2024-06-04 23:10:49,860 [PID 72625] INFO  Purging shared memory...
+2024-06-04 23:10:49,876 [PID 72625] PERFORMANCE  Purged shared memory: 0.015s
+2024-06-04 23:10:49,878 [PID 72625] INFO  Analysis fixpoint started for 23232 overrides and 9047 functions...
+2024-06-04 23:10:52,314 [PID 72625] PERFORMANCE  Recorded initial models: 2.435s
+2024-06-04 23:10:52,314 [PID 72625] INFO  Iteration #0. 7744 callables [...]
+2024-06-04 23:10:55,104 [PID 72625] INFO  Processed 1107 of 7744 callables
+2024-06-04 23:10:55,647 [PID 72625] INFO  Processed 2214 of 7744 callables
+2024-06-04 23:10:55,661 [PID 72625] INFO  Processed 3321 of 7744 callables
+2024-06-04 23:10:55,719 [PID 72625] INFO  Processed 4423 of 7744 callables
+2024-06-04 23:10:55,798 [PID 72625] INFO  Processed 5530 of 7744 callables
+2024-06-04 23:10:55,813 [PID 72625] INFO  Processed 6637 of 7744 callables
+2024-06-04 23:10:55,833 [PID 72625] INFO  Processed 7744 of 7744 callables
+2024-06-04 23:10:56,004 [PID 72625] INFO  Iteration #0, 7744 callables, heap size 0.349GB took 3.69s
+2024-06-04 23:10:56,004 [PID 72625] INFO  Iteration #1. 6056 callables [...]
+2024-06-04 23:10:57,525 [PID 72625] INFO  Processed 866 of 6056 callables
+2024-06-04 23:10:58,134 [PID 72625] INFO  Processed 1732 of 6056 callables
+2024-06-04 23:10:58,137 [PID 72625] INFO  Processed 2598 of 6056 callables
+2024-06-04 23:10:58,144 [PID 72625] INFO  Processed 3464 of 6056 callables
+2024-06-04 23:10:58,260 [PID 72625] INFO  Processed 4330 of 6056 callables
+2024-06-04 23:10:58,378 [PID 72625] INFO  Processed 5196 of 6056 callables
+2024-06-04 23:10:58,390 [PID 72625] INFO  Processed 6056 of 6056 callables
+2024-06-04 23:10:58,501 [PID 72625] INFO  Iteration #1, 6056 callables, heap size 0.351GB took 2.50s
+2024-06-04 23:10:58,501 [PID 72625] INFO  Iteration #2. 943 callables [...]
+2024-06-04 23:10:58,949 [PID 72625] INFO  Processed 135 of 943 callables
+2024-06-04 23:10:59,031 [PID 72625] INFO  Processed 270 of 943 callables
+2024-06-04 23:10:59,079 [PID 72625] INFO  Processed 405 of 943 callables
+2024-06-04 23:10:59,100 [PID 72625] INFO  Processed 540 of 943 callables
+2024-06-04 23:10:59,124 [PID 72625] INFO  Processed 675 of 943 callables
+2024-06-04 23:10:59,168 [PID 72625] INFO  Processed 810 of 943 callables
+2024-06-04 23:10:59,212 [PID 72625] INFO  Processed 943 of 943 callables
+2024-06-04 23:10:59,222 [PID 72625] INFO  Iteration #2, 943 callables, heap size 0.352GB took 0.72s
+2024-06-04 23:10:59,223 [PID 72625] INFO  Iteration #3. 121 callables [...]
+2024-06-04 23:10:59,518 [PID 72625] INFO  Processed 121 of 121 callables
+2024-06-04 23:10:59,519 [PID 72625] INFO  Iteration #3, 121 callables, heap size 0.352GB took 0.30s
+2024-06-04 23:10:59,519 [PID 72625] INFO  Iteration #4. 77 callables [...]
+2024-06-04 23:10:59,607 [PID 72625] INFO  Processed 77 of 77 callables
+2024-06-04 23:10:59,608 [PID 72625] INFO  Iteration #4, 77 callables, heap size 0.352GB took 0.09s
+2024-06-04 23:10:59,608 [PID 72625] INFO  Iteration #5. 30 callables [...]
+2024-06-04 23:10:59,655 [PID 72625] INFO  Processed 30 of 30 callables
+2024-06-04 23:10:59,656 [PID 72625] INFO  Iteration #5, 30 callables, heap size 0.352GB took 0.05s
+2024-06-04 23:10:59,656 [PID 72625] INFO  Iteration #6. 19 callables [...]
+2024-06-04 23:10:59,685 [PID 72625] INFO  Processed 19 of 19 callables
+2024-06-04 23:10:59,690 [PID 72625] INFO  Iteration #6, 19 callables, heap size 0.352GB took 0.03s
+2024-06-04 23:10:59,690 [PID 72625] INFO  Iteration #7. 20 callables [...]
+2024-06-04 23:10:59,713 [PID 72625] INFO  Processed 20 of 20 callables
+2024-06-04 23:10:59,714 [PID 72625] INFO  Iteration #7, 20 callables, heap size 0.352GB took 0.02s
+2024-06-04 23:10:59,714 [PID 72625] INFO  Iteration #8. 26 callables [...]
+2024-06-04 23:10:59,757 [PID 72625] INFO  Processed 26 of 26 callables
+2024-06-04 23:10:59,758 [PID 72625] INFO  Iteration #8, 26 callables, heap size 0.352GB took 0.04s
+2024-06-04 23:10:59,758 [PID 72625] INFO  Iteration #9. 11 callables [...]
+2024-06-04 23:10:59,780 [PID 72625] INFO  Processed 11 of 11 callables
+2024-06-04 23:10:59,782 [PID 72625] INFO  Iteration #9, 11 callables, heap size 0.352GB took 0.02s
+2024-06-04 23:10:59,782 [PID 72625] INFO  Iteration #10. 6 callables [Override{click.core.MultiCommand.shell_complete}, Override{click.core.Command.shell_complete}, click.shell_completion.ShellComplete.complete, click.shell_completion.shell_complete, Override{click.core.MultiCommand.invoke}, Override{click.core.Command.invoke}]
+2024-06-04 23:10:59,783 [PID 72625] INFO  Processed 6 of 6 callables
+2024-06-04 23:10:59,784 [PID 72625] INFO  Iteration #10, 6 callables, heap size 0.352GB took 0.00s
+2024-06-04 23:10:59,784 [PID 72625] INFO  Iteration #11. 5 callables [Override{click.core.Command.shell_complete}, Override{click.core.BaseCommand.shell_complete}, click.core.MultiCommand.invoke, Override{click.core.Command.invoke}, Override{click.core.BaseCommand.invoke}]
+2024-06-04 23:10:59,787 [PID 72625] INFO  Processed 5 of 5 callables
+2024-06-04 23:10:59,787 [PID 72625] INFO  Iteration #11, 5 callables, heap size 0.352GB took 0.00s
+2024-06-04 23:10:59,787 [PID 72625] INFO  Iteration #12. 6 callables [Override{click.core.BaseCommand.shell_complete}, click.shell_completion.ShellComplete.get_completions, click.core.MultiCommand.invoke, Override{click.core.MultiCommand.invoke}, Override{click.core.BaseCommand.invoke}, click.core.BaseCommand.main]
+2024-06-04 23:10:59,794 [PID 72625] INFO  Processed 6 of 6 callables
+2024-06-04 23:10:59,795 [PID 72625] INFO  Iteration #12, 6 callables, heap size 0.352GB took 0.01s
+2024-06-04 23:10:59,795 [PID 72625] INFO  Iteration #13. 4 callables [Override{click.core.MultiCommand.invoke}, Override{click.core.Command.invoke}, click.core.BaseCommand.main, click.core.BaseCommand.__call__]
+2024-06-04 23:10:59,797 [PID 72625] INFO  Processed 4 of 4 callables
+2024-06-04 23:10:59,798 [PID 72625] INFO  Iteration #13, 4 callables, heap size 0.352GB took 0.00s
+2024-06-04 23:10:59,798 [PID 72625] INFO  Iteration #14. 15 callables [...]
+2024-06-04 23:10:59,815 [PID 72625] INFO  Processed 15 of 15 callables
+2024-06-04 23:10:59,816 [PID 72625] INFO  Iteration #14, 15 callables, heap size 0.352GB took 0.02s
+2024-06-04 23:10:59,816 [PID 72625] INFO  Iteration #15. 7 callables [...]
+2024-06-04 23:10:59,836 [PID 72625] INFO  Processed 7 of 7 callables
+2024-06-04 23:10:59,837 [PID 72625] INFO  Iteration #15, 7 callables, heap size 0.352GB took 0.02s
+2024-06-04 23:10:59,837 [PID 72625] INFO  Iteration #16. 7 callables [...]
+2024-06-04 23:10:59,855 [PID 72625] INFO  Processed 7 of 7 callables
+2024-06-04 23:10:59,856 [PID 72625] INFO  Iteration #16, 7 callables, heap size 0.352GB took 0.02s
+2024-06-04 23:10:59,856 [PID 72625] INFO  Iteration #17. 14 callables [...]
+2024-06-04 23:10:59,871 [PID 72625] INFO  Processed 14 of 14 callables
+2024-06-04 23:10:59,872 [PID 72625] INFO  Iteration #17, 14 callables, heap size 0.352GB took 0.02s
+2024-06-04 23:10:59,872 [PID 72625] INFO  Iteration #18. 6 callables [click.core.BaseCommand.make_context, flask.cli.FlaskGroup.make_context, Override{click.core.BaseCommand.make_context}, click.shell_completion._resolve_context, click.core.MultiCommand.invoke, click.core.BaseCommand.main]
+2024-06-04 23:10:59,892 [PID 72625] INFO  Processed 6 of 6 callables
+2024-06-04 23:10:59,892 [PID 72625] INFO  Iteration #18, 6 callables, heap size 0.352GB took 0.02s
+2024-06-04 23:10:59,893 [PID 72625] INFO  Iteration #19. 4 callables [flask.cli.FlaskGroup.make_context, Override{flask.cli.FlaskGroup.make_context}, click.shell_completion._resolve_context, click.core.MultiCommand.invoke]
+2024-06-04 23:10:59,908 [PID 72625] INFO  Processed 4 of 4 callables
+2024-06-04 23:10:59,909 [PID 72625] INFO  Iteration #19, 4 callables, heap size 0.352GB took 0.02s
+2024-06-04 23:10:59,909 [PID 72625] INFO  Iteration #20. 2 callables [Override{flask.cli.FlaskGroup.make_context}, Override{click.core.BaseCommand.make_context}]
+2024-06-04 23:10:59,909 [PID 72625] INFO  Processed 2 of 2 callables
+2024-06-04 23:10:59,909 [PID 72625] INFO  Iteration #20, 2 callables, heap size 0.352GB took 0.00s
+2024-06-04 23:10:59,914 [PID 72625] INFO  Post-processing issues for multi-source rules...
+2024-06-04 23:11:00,516 [PID 72625] PERFORMANCE  Finished issue post-processing for multi-source rules: 0.602s
+2024-06-04 23:11:00,633 [PID 72625] INFO  Found 1 issues
+2024-06-04 23:11:00,633 [PID 72625] PERFORMANCE  Analysis fixpoint complete (iterations: 21, heap size: 351810560, issues: 1): 10.755s
+2024-06-04 23:11:01,366 [PID 72625] INFO  Analysis results were written to `./pysa-runs`.
+2024-06-04 23:11:01,366 [PID 72625] PERFORMANCE  Wrote analysis results: 0.733s
+2024-06-04 23:11:01,368 [PID 72625] PERFORMANCE  Analyze: 187.016s

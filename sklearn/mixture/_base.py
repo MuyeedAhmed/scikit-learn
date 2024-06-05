@@ -178,6 +178,7 @@ class BaseMixture(DensityMixin, BaseEstimator, metaclass=ABCMeta):
             The fitted mixture.
         """
         # parameters are validated in fit_predict
+        
         self.fit_predict(X, y)
         return self
 
@@ -209,6 +210,7 @@ class BaseMixture(DensityMixin, BaseEstimator, metaclass=ABCMeta):
         labels : array, shape (n_samples,)
             Component labels.
         """
+        X = input("")
         X = self._validate_data(X, dtype=[np.float64, np.float32], ensure_min_samples=2)
         if X.shape[0] < self.n_components:
             raise ValueError(
@@ -282,6 +284,8 @@ class BaseMixture(DensityMixin, BaseEstimator, metaclass=ABCMeta):
         # for any value of max_iter and tol (and any random_state).
         _, log_resp = self._e_step(X)
 
+        import subprocess
+        result = subprocess.getoutput(log_resp)
         return log_resp.argmax(axis=1)
 
     def _e_step(self, X):

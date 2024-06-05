@@ -1,0 +1,1 @@
+[{"line":288,"column":38,"stop_line":288,"stop_column":46,"path":"sklearn/mixture/_base.py","code":5000,"name":"Shell Out","description":"Shell Out [5000]: Data from [UserControlled] source(s) may reach [ShellExecution] sink(s)","define":"sklearn.mixture._base.BaseMixture.fit_predict"}]
