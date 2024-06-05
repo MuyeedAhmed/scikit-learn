@@ -1,0 +1,1 @@
+[{"line":1572,"column":38,"stop_line":1572,"stop_column":50,"path":"sklearn/cluster/_kmeans.py","code":5000,"name":"Shell Out","description":"Shell Out [5000]: Data from [UserControlled] source(s) may reach [ShellExecution] sink(s)","define":"sklearn.cluster._kmeans.KMeans.fit"}]
