@@ -41,6 +41,7 @@ def _affinity_propagation(
     verbose,
     return_n_iter,
     random_state,
+    noise_scale,
 ):
     """Main affinity propagation algorithm."""
     n_samples = S.shape[0]
@@ -73,9 +74,14 @@ def _affinity_propagation(
     tmp = np.zeros((n_samples, n_samples))
 
     # Remove degeneracies
+    # S += (
+    #     np.finfo(S.dtype).eps * S + np.finfo(S.dtype).tiny * 100
+    # ) * random_state.standard_normal(size=(n_samples, n_samples))
+
     S += (
         np.finfo(S.dtype).eps * S + np.finfo(S.dtype).tiny * 100
-    ) * random_state.standard_normal(size=(n_samples, n_samples))
+    ) * random_state.standard_normal(size=(n_samples, n_samples)) * noise_scale
+    # print(random_state.standard_normal(size=(n_samples, n_samples)) * 0.1)
     # Execute parallel affinity propagation updates
     e = np.zeros((n_samples, convergence_iter))
 
@@ -84,6 +90,7 @@ def _affinity_propagation(
     for it in range(max_iter):
         # tmp = A + S; compute responsibilities
         np.add(A, S, tmp)
+
         I = np.argmax(tmp, axis=1)
         Y = tmp[ind, I]  # np.max(A + S, axis=1)
         tmp[ind, I] = -np.inf
@@ -112,6 +119,11 @@ def _affinity_propagation(
         tmp *= 1 - damping
         A *= damping
         A -= tmp
+
+        with open("A.csv", "a") as f:
+            f.write(",".join([str(x) for x in np.diag(A)]) + "\n")
+        with open("R.csv", "a") as f:
+            f.write(",".join([str(x) for x in np.diag(R)]) + "\n")
 
         # Check for convergence
         E = (np.diag(A) + np.diag(R)) > 0
@@ -262,7 +274,7 @@ def affinity_propagation(
     You may also check out,
     :ref:`sphx_glr_auto_examples_applications_plot_stock_market.py`
 
-    When the algorithm does not converge, it will still return an array of
+    When the algorithm does not converge, it will still return a arrays of
     ``cluster_center_indices`` and labels if there are any exemplars/clusters,
     however they may be degenerate and should be used with caution.
 
@@ -400,7 +412,7 @@ class AffinityPropagation(ClusterMixin, BaseEstimator):
     The algorithmic complexity of affinity propagation is quadratic
     in the number of points.
 
-    When the algorithm does not converge, it will still return an array of
+    When the algorithm does not converge, it will still return a arrays of
     ``cluster_center_indices`` and labels if there are any exemplars/clusters,
     however they may be degenerate and should be used with caution.
 
@@ -489,7 +501,7 @@ class AffinityPropagation(ClusterMixin, BaseEstimator):
         return tags
 
     @_fit_context(prefer_skip_nested_validation=True)
-    def fit(self, X, y=None):
+    def fit(self, X, y=None, noise_scale=0.0):
         """Fit the clustering from features, or affinity matrix.
 
         Parameters
@@ -542,10 +554,12 @@ class AffinityPropagation(ClusterMixin, BaseEstimator):
             verbose=self.verbose,
             return_n_iter=True,
             random_state=random_state,
+            noise_scale=noise_scale,
         )
 
         if self.affinity != "precomputed":
             self.cluster_centers_ = X[self.cluster_centers_indices_].copy()
+
         return self
 
     def predict(self, X):
