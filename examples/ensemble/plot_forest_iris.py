@@ -7,8 +7,8 @@ Plot the decision surfaces of forests of randomized trees trained on pairs of
 features of the iris dataset.
 
 This plot compares the decision surfaces learned by a decision tree classifier
-(first column), by a random forest classifier (second column), by an extra-
-trees classifier (third column) and by an AdaBoost classifier (fourth column).
+(first column), by a random forest classifier (second column), by an extra-trees
+classifier (third column) and by an AdaBoost classifier (fourth column).
 
 In the first row, the classifiers are built using the sepal width and
 the sepal length features only, on the second row using the petal length and
@@ -41,6 +41,9 @@ on many cores as each tree is built independently of the others. AdaBoost's
 samples are built sequentially and so do not use multiple cores.
 
 """
+
+# Authors: The scikit-learn developers
+# SPDX-License-Identifier: BSD-3-Clause
 
 import matplotlib.pyplot as plt
 import numpy as np
