@@ -130,7 +130,11 @@ def _yield_api_checks(estimator):
         )
 
     tags = get_tags(estimator)
-    yield check_estimator_cloneable
+    # This is commented out since it's the first check both
+    # `parametrize_with_checks` and `check_esitmator` do
+    # anyway. But leaving it here as commented out to know
+    # it's a part of the basic API.
+    # yield check_estimator_cloneable
     yield check_estimator_tags_renamed
     yield check_valid_tag_types
     yield check_estimator_repr
@@ -157,6 +161,7 @@ def _yield_checks(estimator):
         yield check_sample_weights_pandas_series
         yield check_sample_weights_not_an_array
         yield check_sample_weights_list
+        yield check_all_zero_sample_weights_error
         if not tags.input_tags.pairwise:
             # We skip pairwise because the data is not pairwise
             yield check_sample_weights_shape
@@ -239,9 +244,6 @@ def _yield_classifier_checks(classifier):
     # test if predict_proba is a monotonic transformation of decision_function
     yield check_decision_proba_consistency
 
-    if isinstance(classifier, LinearClassifierMixin):
-        if "class_weight" in classifier.get_params().keys():
-            yield check_class_weight_balanced_linear_classifier
     if (
         isinstance(classifier, LinearClassifierMixin)
         and "class_weight" in classifier.get_params().keys()
@@ -1505,6 +1507,28 @@ def check_sample_weights_list(name, estimator_orig):
     sample_weight = [3] * n_samples
     # Test that estimators don't raise any exception
     estimator.fit(X, y, sample_weight=sample_weight)
+
+
+@ignore_warnings(category=FutureWarning)
+def check_all_zero_sample_weights_error(name, estimator_orig):
+    """Check that estimator raises error when all sample weights are 0."""
+    estimator = clone(estimator_orig)
+
+    X, y = make_classification(random_state=42)
+    X = _enforce_estimator_tags_X(estimator, X)
+    y = _enforce_estimator_tags_y(estimator, y)
+
+    sample_weight = np.zeros(_num_samples(X))
+
+    # The following estimators have custom error messages:
+    # - NuSVC: Invalid input - all samples have zero or negative weights.
+    # - Perceptron: The sample weights for validation set are all zero, consider using
+    #   a different random state.
+    # - SGDClassifier: The sample weights for validation set are all zero, consider
+    #   using a different random state.
+    # All other estimators: Sample weights must contain at least one non-zero number.
+    with raises(ValueError, match=r"(.*weight.*zero.*)|(.*zero.*weight.*)"):
+        estimator.fit(X, y, sample_weight=sample_weight)
 
 
 @ignore_warnings(category=FutureWarning)
