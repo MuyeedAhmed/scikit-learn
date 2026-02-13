@@ -43,8 +43,8 @@ def _affinity_propagation(
     random_state,
 ):
     """Main affinity propagation algorithm."""
-    # n_samples = S.shape[0]
-    n_samples = input("")
+    n_samples = S.shape[0]
+    # n_samples = input("")
     if n_samples == 1 or _equal_similarities_and_preferences(S, preference):
         # It makes no sense to run the algorithm in this case, so return 1 or
         # n_samples clusters, depending on preferences
@@ -547,8 +547,8 @@ class AffinityPropagation(ClusterMixin, BaseEstimator):
 
         if self.affinity != "precomputed":
             self.cluster_centers_ = X[self.cluster_centers_indices_].copy()
-        import subprocess
-        result = subprocess.getoutput(self.labels_)
+        # import subprocess
+        # result = subprocess.getoutput(self.labels_)
         return self
 
     def predict(self, X):
